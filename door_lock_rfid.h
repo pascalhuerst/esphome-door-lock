@@ -196,6 +196,7 @@ class RfidSensorsComponent : public Component {
   void setup() override {
     SPIFFS.begin();
     SPI.begin();
+    SPI.pins(D5, D6, D7, D0);
     rfid.PCD_Init(D8, D3);
 
     load_users_list();
